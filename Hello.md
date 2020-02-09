@@ -1,6 +1,6 @@
 Hello Golem!
 
-We previous made the a static html page. It's like a word doc, where the contents of the page are always the same. Under that model, if we wanted to have page for 5 types of ramen, we would need to type out five of those pages. If we wanted to fix a typo in all of them, we would have to change each of the 5 files individually.
+We previously made the a static html page. It's like a word doc, where the contents of the page are always the same. Under that model, if we wanted to have page for 5 types of ramen, we would need to type out five of those pages. If we wanted to fix a typo in all of them, we would have to change each of the 5 files individually.
 
 This time, we are going to make a dynamic web page. We will write one template, and that template will render the value of variables that we give it. The page will be dynamically generated, in that the page returned will be different depending on the url the user types.
 
@@ -17,14 +17,17 @@ First, check if you have the command `conda` already installed. If not, install 
 Then, create a conda environment (the sandbox) for this project
 `conda create --name ramen python=3.7`
 
+
 Activate the environment
 `source activate ramen`
+
 Whenever you want to run the app in a new terminal session, you first need to run this to activate the conda environment.
 
 Type `pip --version`, and you should see that it says (python 3.7).
 
 Finally, install flask
 `pip install Flask`
+
 When you type `flask`, you should see the command information.
 
 ## Running the web app
@@ -32,6 +35,7 @@ I'm going to tell you the commands to run, so you can play with the web page and
 
 To start the app, run
 `export FLASK_APP=ramen.py && flask run`
+
 If, in the future, here it says that flask not found, check if you have run `source activate ramen` yet.
 
 Then in a browser, go to http://127.0.0.1:5000/ramen/hi
@@ -133,3 +137,4 @@ The `{{ name }}` syntax is based on a library called jinja, which flask uses to 
 - Synposis
 - List of control structures (https://jinja.palletsprojects.com/en/2.11.x/templates/#list-of-control-structures), just the first two code blocks
 - Variables (https://jinja.palletsprojects.com/en/2.11.x/templates/#variables)
+
