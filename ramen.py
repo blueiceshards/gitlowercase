@@ -6,6 +6,10 @@ app = Flask(__name__)
 
 data = pd.read_csv('ramenrater.csv', engine='python')
 
+L = []
+for x in data['Variety']:
+  L.append('/ramen/'+x)
+
 @app.route('/ramen/<name>')
 def view_ramen(name):
     return render_template('ramen.html', name=name, brand=info(name)[0], style=info(name)[1], country=info(name)[2], stars=info(name)[3])
@@ -16,10 +20,7 @@ def info(name):
 
 @app.route('/')
 def home():
-    return render_template('home.html', url=urllist())
+    return render_template('home.html', urls=L)
 
-def urllist():
-  L = []
-  for x in data['Variety']:
-    L.append('/ramen/'+x)
-  return L
+
+
